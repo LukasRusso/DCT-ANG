@@ -1,0 +1,59 @@
+.text {
+    resize: none;
+}
+
+.inserir {
+    top: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.comment {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+.comment-text-area {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.textinput {
+    float: left;
+    width: 100%;
+    min-height: 75px;
+    outline: none;
+    resize: none;
+    border: 1px solid grey;
+}
+
+.textHistory {
+    float: inline-start;
+    width: 85%;
+    height: 80%;
+    min-height: 75px;
+    outline: none;
+    resize: none;
+    border: 0px;
+}
+
+.history {
+    background-color: rgba(223, 241, 235, 0.945);
+    width: 100%;
+    height: 200px;
+    margin-top: 10%;
+}
+.corpoHistory {
+    display: inline-block;
+    margin-top: 5%;
+}
+
+.text {
+font-family: cursive;
+margin-top: 5%;
+font-size: 25px;
+}
+  
