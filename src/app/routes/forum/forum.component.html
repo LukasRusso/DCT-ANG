@@ -1,0 +1,54 @@
+<div class="forum">
+    <div class="forumHeader">
+        <div class="forumPesquisa">
+            <div class="col-lg-4">
+                <input type="text" placeholder="Informe um campo de pesquisa.">
+            </div>
+            <div class="col-lg-4">
+                <button type="button">Pesquisa</button>
+            </div>
+            <div class="col-lg-4">
+                <label>Página {{}} de {{}}</label>
+            </div>
+        </div>
+    </div>
+    <div class="forumBody">
+        <div class="forumBodyHeader">
+            <div class="col-lg-2">                    
+                <label>Título | Autor</label>
+            </div>
+            <div class="col-lg-4">
+                <label>Respostas</label>
+            </div>
+            <div class="col-lg-4">
+                <label>Última mensagem</label>
+            </div>
+        </div>
+    </div>
+    <div class="forumTopicos">
+        <ul class="topicos">
+            <li *ngFor="let t of topicos">
+                <div class="col-lg-1" id="imageTitle">
+                    <i *ngIf=" condition.fixed" class="fas fa-comment" style="background-color: green;"></i>
+                    <i *ngIf="!condition.fixed" class="fas fa-comment" style="background-color: yellow;"></i>
+                </div>
+                <div class="col-lg-5" id="title">
+                    <label>Primeiro teste do forim</label>
+                </div>
+                <div class="col-lg-3" id="comments">
+                    <label> {{}} comentários</label>
+                </div>
+                <div class="col-lg-3" id="lastMessage">
+                    <div class="col-lg-4" id="imageUser">
+                        <img *ngIf="condition.lastMessage.image" src="#" alt="userImage">
+                        <i *ngIf="!condition.lastMessage.image" class="fas fa-user-slash" style="background-color:yellow"></i>
+                    </div>
+                    <div class="col-lg-8" id="infoUser">
+                        <div class="userName"></div>
+                        <div class="messageDate"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
