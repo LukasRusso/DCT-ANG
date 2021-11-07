@@ -6,6 +6,9 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -23,7 +26,10 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    FormsModule
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [
   ]

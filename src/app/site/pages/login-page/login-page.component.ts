@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
   constructor(private route: Router) {}
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  passwordFormControl = new FormControl('', [Validators.required]);
 
   ngOnInit() {}
 }
