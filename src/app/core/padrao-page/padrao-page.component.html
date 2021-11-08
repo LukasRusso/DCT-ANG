@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+<div class="content">
+  <div class="navBar">
+    <nav class="menu">
+      <ul>
+        <img class="logo" src="../../../assets/images/BaseTechLogo.png" />
+        <li (click) = "handleNavigation('')">Home</li>
+        <li (click) = "handleNavigation('teste')">Teste</li>
+        <li (click) = "handleNavigation('forum')">Forum</li>
+        <li (click) = "handleNavigation('dashboard')">Dashboard</li>
+        <li>
+          <input type="text" />
+          <input
+            class="pesquisa"
+            type="image"
+            src="../../../assets/images/pesquisa.png"
+            alt="Submit"
+            width="25"
+            height="25"
+          />
+          <input
+            class="pesquisa"
+            type="image"
+            src="../../../assets/images/sair.jpg"
+            alt="Submit"
+            width="25"
+            height="25"
+          />
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <router-outlet></router-outlet>
+</div>
