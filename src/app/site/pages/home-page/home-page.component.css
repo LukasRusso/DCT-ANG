@@ -1,0 +1,43 @@
+
+#logo {
+    width: 69px;
+    height: 57px;
+    margin: auto;
+    left: 50%;
+  }
+  
+  #fundo {
+    background: #dffcfc;
+  }
+  
+  #content {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    background: #ffffff;
+  }
+  
+  #menu ul {
+    width: 50%;
+    padding: 0px;
+    margin: auto;
+    list-style: none;
+  }
+  #menu ul li {
+    display: inline;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+  }
+  #menu ul li a {
+    padding: 2px 10px;
+    display: inline-block;
+  
+    /* visual do link */
+    text-decoration: none;
+  }
+  
+  #menu ul li a:hover {
+    background-color: #bffaf2;
+  }
+  
