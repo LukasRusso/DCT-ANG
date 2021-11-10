@@ -1,1 +1,38 @@
-<router-outlet></router-outlet>
+<mat-toolbar>
+  <img class="logo" src="../../../assets/images/BaseTechLogo.png" />
+  <span>BaseTech</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="handleNavigation('cadastro')"
+  >
+    Cadastre-se
+  </button>
+  <button mat-raised-button color="primary" (click)="handleNavigation('login')">
+    Entrar
+  </button>
+  <button type="button" mat-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #drawer class="example-sidenav" position="end">
+    <div class="link" (click)="handleNavigation('')">
+      <mat-icon>home</mat-icon> Home
+    </div>
+    <div class="link" (click)="handleNavigation('teste')">
+      <mat-icon>content_paste</mat-icon>Teste
+    </div>
+    <div class="link" (click)="handleNavigation('forum')">
+      <mat-icon>school</mat-icon>Forum
+    </div>
+    <div class="link" (click)="handleNavigation('dashboard')">
+      <mat-icon>vertical_split</mat-icon>Dashboard
+    </div>
+  </mat-sidenav>
+  <section class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </section>
+</mat-sidenav-container>
