@@ -1,0 +1,6 @@
+.postList{
+    max-width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+}
