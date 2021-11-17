@@ -11,6 +11,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SubscriptionPeageComponent } from './pages/subcription-page/subcription-page.component';
+import { PostComponent } from './components/post/post.component';
+import { ForumPageComponent } from './pages/forum-page/forum-page.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,8 @@ import { SubscriptionPeageComponent } from './pages/subcription-page/subcription
     DashboardPageComponent,
     HomePageComponent,
     SubscriptionPeageComponent,
+    PostComponent,
+    ForumPageComponent,
   ],
 
   exports: [
@@ -36,6 +41,7 @@ import { SubscriptionPeageComponent } from './pages/subcription-page/subcription
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
+    MatCardModule,
   ],
   providers: [],
 })
