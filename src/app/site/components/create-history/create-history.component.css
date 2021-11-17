@@ -1,0 +1,13 @@
+.text-container{
+    width: 600px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.button{
+    width: 100px;
+}

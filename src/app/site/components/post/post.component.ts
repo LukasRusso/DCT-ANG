@@ -10,4 +10,9 @@ export class PostComponent implements OnInit {
   constructor() {}
   @Input() post: PostSumary;
   ngOnInit(): void {}
+
+  handleSelectPost(){
+    
+  }
 }
+
