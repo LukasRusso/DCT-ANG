@@ -1,0 +1,7 @@
+<form class="form" [formGroup]="pageForm">
+  <h2>Conte Sua história para nós</h2>
+  <mat-form-field class="text-container" appearance="fill">
+    <textarea rows="5" matInput formControlName="description"></textarea>
+  </mat-form-field>
+  <button class="button" mat-raised-button color="primary" (click)='postHistory()'> Enviar</button>
+</form>

@@ -14,6 +14,7 @@ import { SubscriptionPeageComponent } from './pages/subcription-page/subcription
 import { PostComponent } from './components/post/post.component';
 import { ForumPageComponent } from './pages/forum-page/forum-page.component';
 import { MatCardModule } from '@angular/material/card';
+import { CreateHistoryComponent } from './components/create-history/create-history.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatCardModule } from '@angular/material/card';
     SubscriptionPeageComponent,
     PostComponent,
     ForumPageComponent,
+    CreateHistoryComponent
   ],
 
   exports: [
@@ -33,7 +35,7 @@ import { MatCardModule } from '@angular/material/card';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
+    FormsModule, ReactiveFormsModule,
     MatFormFieldModule,
     HttpClientModule,
     RouterModule,
