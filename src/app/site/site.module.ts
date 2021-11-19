@@ -15,6 +15,7 @@ import { PostComponent } from './components/post/post.component';
 import { ForumPageComponent } from './pages/forum-page/forum-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { CreateHistoryComponent } from './components/create-history/create-history.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CreateHistoryComponent } from './components/create-history/create-histo
     SubscriptionPeageComponent,
     PostComponent,
     ForumPageComponent,
-    CreateHistoryComponent
+    CreateHistoryComponent,
+    HistoryComponent
   ],
 
   exports: [
