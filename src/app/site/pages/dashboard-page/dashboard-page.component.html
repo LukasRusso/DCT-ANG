@@ -1,2 +1,5 @@
-<div>Dashboard</div>
+<div *ngFor='let history of historyList' class="historyList">
+  <app-history [history]=history></app-history>
+</div>
+
 <app-create-history></app-create-history>
