@@ -52,9 +52,6 @@ jobs:
     name: Deploy to Azure Web Angular QA
     needs: build    
     runs-on: ubuntu-latest    
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     steps:
       # Downloading build artifact
       - name: Download artifact from build job
@@ -81,7 +78,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'DCT-ANG'
-          slot-name: 'Production'
+          #slot-name: 'QA'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA31D2F0DEAE448786CC71553E739DF0 }}
           package: .
 
