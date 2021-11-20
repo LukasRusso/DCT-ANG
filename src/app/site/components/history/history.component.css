@@ -11,3 +11,8 @@
 .button{
     width: 100px;
 }
+
+.historyCard{
+    width: 500px;
+    margin: 20px;
+}
