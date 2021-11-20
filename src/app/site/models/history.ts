@@ -1,4 +1,4 @@
 export interface History {
-  id:number,
+  id?:number,
   description:string,
 }
