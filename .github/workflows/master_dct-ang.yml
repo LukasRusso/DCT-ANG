@@ -55,7 +55,6 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
     steps:
       # Downloading build artifact
       - name: Download artifact from build job
@@ -74,7 +73,7 @@ jobs:
         uses: azure/login@v1
         continue-on-error: false
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA31D2F0DEAE448786CC71553E739DF0 }}
 
       # Deploy web app on azure
       - name: 'Deploy to Azure Web App'
