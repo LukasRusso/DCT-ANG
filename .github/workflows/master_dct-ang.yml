@@ -69,11 +69,11 @@ jobs:
           unzip -qq ./buildartifacts/Application.zip -d .
 
       # Login to azure
-      - name: Login to Azure
-        uses: azure/login@v1
-        continue-on-error: false
-        with:
-          creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA31D2F0DEAE448786CC71553E739DF0 }}
+      # - name: Login to Azure
+      #   uses: azure/login@v1
+      #   continue-on-error: false
+      #   with:
+      #     creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA31D2F0DEAE448786CC71553E739DF0 }}
 
       # Deploy web app on azure
       - name: 'Deploy to Azure Web App'
