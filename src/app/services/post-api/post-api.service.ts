@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { PostSumary } from 'src/app/site/models/postSumary';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ import { PostSumary } from 'src/app/site/models/postSumary';
 
 export class PostApiService {
 
-  url ="http://localhost:3000/posts";
+  url = environment.apiUrl + "/forum";
   constructor(private http: HttpClient) {}
 
 
