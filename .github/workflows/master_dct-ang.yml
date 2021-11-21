@@ -80,7 +80,7 @@ jobs:
         with:
           app-name: 'DCT-ANG'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA31D2F0DEAE448786CC71553E739DF0 }}
-          package: ./dist/DCT-ANG
+          package: ./distQA/DCT-ANG
 
   DeployPRD:
     name: Deploy to Azure Web Angular PRD
@@ -106,4 +106,4 @@ jobs:
         with: 
           app-name: ${{ env.AZURE_WEBAPP_NAME_PRD }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PROD }}
-          package: ./dist/DCT-ANG
+          package: ./distPROD/DCT-ANG
