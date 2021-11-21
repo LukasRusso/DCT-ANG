@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng --version && ng serve -o",
-    "build": "ng build",
+    "build": "ng build --output-path=distQA/DCT-ANG && ng build --prod --output-path=distPROD/DCT-ANG",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

@@ -33,19 +33,28 @@ jobs:
 
       - name: Creating artifact directories
         run: |
-          mkdir buildartifacts
+          mkdir buildartifactsQA
+          mkdir buildartifactsPROD
 
       # Archive build artifact
       - name: Archive Application
         run: |
-          zip -qq -r ./buildartifacts/Application.zip .
+          zip -qq -r ./buildartifactsQA/Application.zip .
+          zip -qq -r ./buildartifactsPROD/Application.zip .
 
-      # Uploading application to build artifact
+      # Uploading application to build artifact QA
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: buildartifacts
-          path: buildartifacts
+          name: buildartifactsQA
+          path: buildartifactsQA
+
+      # Uploading application to build artifact PROD
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: buildartifactsPROD
+          path: buildartifactsPROD
 
   DeployQA:
     name: Deploy to Azure Web Angular QA
@@ -56,13 +65,13 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: buildartifacts
-          path: buildartifacts
+          name: buildartifactsQA
+          path: buildartifactsQA
 
        # Uzipping build artifacts
       - name: unzipping build artifact
         run: |
-          unzip -qq ./buildartifacts/Application.zip -d .     
+          unzip -qq ./buildartifactsQA/Application.zip -d .     
 
       # Deploy web app on azure
       - name: 'Deploy to Azure Web App'
@@ -76,20 +85,20 @@ jobs:
   DeployPRD:
     name: Deploy to Azure Web Angular PRD
     needs: [DeployQA]  
+    environment: Production
     runs-on: ubuntu-latest   
     steps:    
       # Downloading build artifact
       - name: Download a Build Artifact
         uses: actions/download-artifact@v2
-        continue-on-error: false
         with:
-          name: buildartifacts
-          path: buildartifacts
+          name: buildartifactsPROD
+          path: buildartifactsPROD
 
       # Uzipping build artifacts
       - name: unzipping build artifact
         run: |
-          unzip -qq ./buildartifacts/Application.zip -d .
+          unzip -qq ./buildartifactsPROD/Application.zip -d .
 
       # Deploy web app on azure
       - name: 'Deploy to Azure WebApp'
