@@ -6,7 +6,7 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: "DCT-ANG"    # set this to your application's name
-  AZURE_WEBAPP_NAME_PRD: ""    # set this for name of production API
+  AZURE_WEBAPP_NAME_PRD: "OfficialDCT"    # set this for name of production API
   AZURE_WEBAPP_PACKAGE_PATH: "."      # set this to the path to your web app project, defaults to the repository root
   NODE_VERSION: '14.16.0'                        # set this to the node version to use
   RESOURCEGROUPNAME: "DCT_ANG"
@@ -63,14 +63,7 @@ jobs:
        # Uzipping build artifacts
       - name: unzipping build artifact
         run: |
-          unzip -qq ./buildartifacts/Application.zip -d .
-
-      # Login to azure
-      # - name: Login to Azure
-      #   uses: azure/login@v1
-      #   continue-on-error: false
-      #   with:
-      #     creds: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA31D2F0DEAE448786CC71553E739DF0 }}
+          unzip -qq ./buildartifacts/Application.zip -d .     
 
       # Deploy web app on azure
       - name: 'Deploy to Azure Web App'
@@ -78,13 +71,12 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'DCT-ANG'
-          #slot-name: 'QA'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FA31D2F0DEAE448786CC71553E739DF0 }}
           package: ./dist/DCT-ANG
 
   DeployPRD:
     name: Deploy to Azure Web Angular PRD
-    needs: DeployQA  
+    needs: [DeployQA]  
     runs-on: ubuntu-latest
     environment:     
       name: 'Production'
@@ -109,6 +101,5 @@ jobs:
       uses: azure/webapps-deploy@v2
       with: 
         app-name: 'DCT-ANG-PROD'
-        slot-name: 'Production'
-        publish-profile: ${{ secrets }}
-        package: .
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PROD }}
+        package: ./dist/DCT-ANG
