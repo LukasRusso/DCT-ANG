@@ -1,20 +1,14 @@
-<form class="form">
+<form class="form" [formGroup]="pageForm">
   <h1>Criar Nova Conta</h1>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Nome</mat-label>
-    <input matInput />
-  </mat-form-field>
+ 
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Email</mat-label>
-    <input type="email" matInput placeholder="Ex. pat@example.com" />
+    <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email"/>
   </mat-form-field>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Nome de Usuário</mat-label>
-    <input matInput />
-  </mat-form-field>
+
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Senha</mat-label>
-    <input type="password" matInput />
+    <input type="password" matInput formControlName="senha" minlength="8"/>
   </mat-form-field>
-  <button mat-raised-button color="primary">Criar Nova Conta</button>
+  <button mat-raised-button color="primary" (click)='createUser()'>Criar Nova Conta</button>
 </form>
