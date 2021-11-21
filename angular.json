@@ -36,6 +36,22 @@
             "scripts": []
           },
           "configurations": {
+            "QA": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [],
+              "outputHashing": "all"
+            },
             "production": {
               "budgets": [
                 {
@@ -66,7 +82,7 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "QA"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
