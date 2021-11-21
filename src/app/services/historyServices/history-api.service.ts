@@ -4,12 +4,13 @@ import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { PostSumary } from 'src/app/site/models/postSumary';
 import { History } from 'src/app/site/models/history';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HistoryApiService {
-  url = 'https://officialbasetech.azurewebsites.net/api/userHistory';
+  url = environment.apiUrl+ '/userHistory';
   constructor(private http: HttpClient) {}
 
   getHistorys() {
