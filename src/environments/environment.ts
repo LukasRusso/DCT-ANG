@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://dct-ang.azurewebsites.net/api',
+  apiUrl: 'https://dct.azurewebsites.net/api',
 };
 
 /*
