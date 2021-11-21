@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm install -g @angular/cli && ng --version && ng serve",
+    "start": "ng --version && ng serve -o",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
-  "dependencies": {    
+  "dependencies": {
     "@angular/animations": "~12.2.0",
     "@angular/cdk": "^12.2.12",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
+    "@angular/fire": "^7.2.0",
     "@angular/forms": "~12.2.0",
     "@angular/material": "^12.2.12",
     "@angular/platform-browser": "~12.2.0",
@@ -22,7 +23,9 @@
     "@angular/router": "~12.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "firebase": "^9.4.0",
+    "rxfire": "^6.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.12",
