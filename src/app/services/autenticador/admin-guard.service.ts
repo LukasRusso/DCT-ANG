@@ -1,10 +1,11 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { shareReplay } from "rxjs/operators";
-import { Usuario } from "src/app/site/models/usuario";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { shareReplay } from 'rxjs/operators';
+import { Usuario } from 'src/app/site/models/usuario';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class AdminGuardService {
   constructor(private http: HttpClient) {}
@@ -12,9 +13,9 @@ export class AdminGuardService {
   login(email: string, password: string) {
     return (
       this.http
-        .post<Usuario>("http://localhost:8080/login", {
+        .post<Usuario>(environment.apiUrl + '/user/authenticate', {
           email: email,
-          senha: password
+          senha: password,
         })
         // this is just the HTTP call,
         // we still need to handle the reception of the token
