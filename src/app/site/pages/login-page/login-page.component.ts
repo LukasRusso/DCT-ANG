@@ -26,9 +26,12 @@ export class LoginPageComponent implements OnInit {
     console.log(this.emailFormControl.value, this.passwordFormControl.value);
     this.authService
       .login(this.emailFormControl.value, this.passwordFormControl.value)
-      .subscribe(() => {
+      .subscribe((response) => {
+        this.store.setUser(response)
         console.log('User is logged in');
+
+        this.route.navigateByUrl('/dashboard');
       });
-      // this.route.navigateByUrl('/dashboard');
+      
   }
 }
