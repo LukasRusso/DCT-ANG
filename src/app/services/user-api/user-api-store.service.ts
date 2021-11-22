@@ -14,4 +14,5 @@ export class UserApiStoreService extends Store<Usuario> {
   createUser(userForm: Usuario) {
     return this.api.createUser(userForm);
   }
+  
 }
