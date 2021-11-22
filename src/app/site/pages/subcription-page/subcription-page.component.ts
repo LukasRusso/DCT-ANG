@@ -11,22 +11,28 @@ import { Usuario } from '../../models/usuario';
 })
 export class SubscriptionPeageComponent implements OnInit {
   pageForm: FormGroup;
-  constructor(private route: Router, private fb: FormBuilder, private service: UserApiStoreService) {
+  constructor(
+    private route: Router,
+    private fb: FormBuilder,
+    private service: UserApiStoreService
+  ) {
     this.pageForm = this.fb.group({
-      email: ['',Validators.email],
-      senha: ['',Validators.minLength],
+      email: ['', Validators.email],
+      senha: ['', Validators.minLength],
     });
   }
 
   ngOnInit() {}
 
-  createUser(){
-    if(this.pageForm.valid){
-      this.service.createUser(this.pageForm.value as Usuario).subscribe(() => this.route.navigateByUrl("/login"))
-      this.route.navigateByUrl('/');
-    }else{
-      alert("Preencha o formulario Corretamente")
+  createUser() {
+    if (this.pageForm.valid) {
+      this.service.createUser(this.pageForm.value as Usuario).subscribe(() => {
+        this.route.navigateByUrl('/login');
+        this.service.isLoged = true;
+      });
+      this.route.navigateByUrl('/login');
+    } else {
+      alert('Preencha o formulario Corretamente');
     }
-
   }
 }

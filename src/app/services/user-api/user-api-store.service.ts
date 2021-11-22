@@ -7,6 +7,7 @@ import { UserApiService } from './user-api.service';
   providedIn: 'root',
 })
 export class UserApiStoreService extends Store<Usuario> {
+ public isLoged: boolean = false;
   constructor(private api: UserApiService) {
     super(null as any);
   }
@@ -17,6 +18,7 @@ export class UserApiStoreService extends Store<Usuario> {
     localStorage.setItem('userId', response.userId);
     localStorage.setItem('token', response.token);
     localStorage.setItem('isLoged', 'true');
+    this.isLoged = true;
   }
 
   getIsLoged() {

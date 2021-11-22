@@ -6,10 +6,16 @@
     mat-raised-button
     color="primary"
     (click)="handleNavigation('cadastro')"
+    *ngIf="!this.userStore.isLoged"
   >
     Cadastre-se
   </button>
-  <button mat-raised-button color="primary" (click)="handleNavigation('login')">
+  <button
+    mat-raised-button
+    color="primary"
+    *ngIf="!this.userStore.isLoged"
+    (click)="handleNavigation('login')"
+  >
     Entrar
   </button>
   <button type="button" mat-button (click)="drawer.toggle()">

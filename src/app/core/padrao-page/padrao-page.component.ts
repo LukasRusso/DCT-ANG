@@ -10,11 +10,14 @@ import { UserApiStoreService } from 'src/app/services/user-api/user-api-store.se
   styleUrls: ['./padrao-page.component.scss'],
 })
 export class PadraoPageComponent implements OnInit {
-  constructor(private route: Router, userStore: UserApiStoreService) {}
-  isLoged:boolean = false
-  ngOnInit() {}
+  constructor(private route: Router, public userStore: UserApiStoreService) {}
+  isLoged: boolean = this.userStore.isLoged;
+  ngOnInit() {
+    this.isLoged = this.userStore.isLoged;
+  }
   handleNavigation(evento: string) {
     console.log(evento);
     this.route.navigateByUrl('/' + evento);
+    console.log(this.isLoged)
   }
 }
